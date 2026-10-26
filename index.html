@@ -13,8 +13,12 @@
     /* 전체 글꼴 및 배경 설정 */
     body {
       font-family: 'Jua', sans-serif;
-      /* 부드러운 파스텔톤 배경 그라데이션 */
-      background: linear-gradient(135deg, #fff1f2 0%, #eff6ff 100%);
+      /* bg.jpg 배경 이미지 위에 반투명한 흰색 막(rgba 0.7)을 씌움 */
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       min-height: 100vh;
     }
     
@@ -43,7 +47,7 @@
   </main>
 
   <!-- 푸터 영역 -->
-  <footer class="mt-16 text-gray-400 text-sm">
+  <footer class="mt-16 text-gray-500 text-sm font-medium">
     © 우리 반 최고! 재미있는 수업 시간 💛
   </footer>
 
@@ -56,8 +60,6 @@
       { name: '동물 분류 탐정', url: 'https://gemini.google.com/share/ef8ddfaf4dd1', icon: '🐾', bgColor: '#FFD1DC' },
       { name: '태양계 행성 탐험 도감', url: 'planets.html', icon: '🪐', bgColor: '#E0FFFF' },
       { name: '수업 이해도 신호등', url: 'https://goodteacher.my.canva.site/cn6yfa7tj1g84afr', icon: '🚦', bgColor: '#E8F5E9' }
-      // 새로운 앱을 추가하려면 위 줄의 끝에 쉼표(,)를 넣고 아래 형식을 복사해서 적어주세요.
-      // { name: '이름', url: '주소', icon: '이모지', bgColor: '배경색(HEX 또는 영문)' }
     ];
     // =========================================================================
 
