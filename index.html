@@ -53,14 +53,9 @@
     // 💡 [선생님 설정 영역] 여기에 새로운 앱을 추가하거나 수정하세요!
     // =========================================================================
     const classApps = [
-      { name: '패들렛', url: 'https://padlet.com', icon: '📝', bgColor: '#FFD1DC' },
-      { name: '띵커벨', url: 'https://www.tkbell.co.kr', icon: '🔔', bgColor: '#FFFACD' },
-      { name: '캔바', url: 'https://www.canva.com', icon: '🎨', bgColor: '#E0FFFF' },
-      { name: '구글 클래스룸', url: 'https://classroom.google.com', icon: '🏫', bgColor: '#E8F5E9' },
-      { name: '클래스팅', url: 'https://www.classting.com', icon: '📱', bgColor: '#F3E5F5' },
-      { name: '미리캔버스', url: 'https://www.miricanvas.com', icon: '🖼️', bgColor: '#E3F2FD' },
-      { name: '엔트리', url: 'https://playentry.org', icon: '🤖', bgColor: '#FFF0F5' },
-      { name: '디지털 교과서', url: 'https://dtbook.edunet.net', icon: '📚', bgColor: '#FFF8E1' }
+      { name: '동물 분류 탐정', url: 'https://gemini.google.com/share/ef8ddfaf4dd1', icon: '🐾', bgColor: '#FFD1DC' },
+      { name: '태양계 행성 탐험 도감', url: 'planets.html', icon: '🪐', bgColor: '#E0FFFF' },
+      { name: '수업 이해도 신호등', url: 'https://goodteacher.my.canva.site/cn6yfa7tj1g84afr', icon: '🚦', bgColor: '#E8F5E9' }
       // 새로운 앱을 추가하려면 위 줄의 끝에 쉼표(,)를 넣고 아래 형식을 복사해서 적어주세요.
       // { name: '이름', url: '주소', icon: '이모지', bgColor: '배경색(HEX 또는 영문)' }
     ];
@@ -86,7 +81,7 @@
 
       // 3. 앱 이름 생성
       const name = document.createElement('div');
-      name.className = "text-xl md:text-2xl font-bold tracking-wide";
+      name.className = "text-xl md:text-2xl font-bold tracking-wide text-center word-keep-all";
       name.textContent = app.name;
 
       // 4. 빛나는 반사 효과 (디테일)
