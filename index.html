@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ 우리 반 앱 진열장 ✨</title>
+  <!-- Tailwind CSS 로드 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 귀여운 한글 폰트(Jua) 로드 -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 전체 글꼴 및 배경 설정 */
+    body {
+      font-family: 'Jua', sans-serif;
+      /* 부드러운 파스텔톤 배경 그라데이션 */
+      background: linear-gradient(135deg, #fff1f2 0%, #eff6ff 100%);
+      min-height: 100vh;
+    }
+    
+    /* 카드 호버 애니메이션 효과 */
+    .app-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .app-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center py-12 px-6">
+
+  <!-- 헤더 영역 -->
+  <header class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl text-pink-400 mb-4 drop-shadow-sm">✨ 우리 반 앱 진열장 ✨</h1>
+    <p class="text-gray-600 text-lg md:text-xl">원하는 앱을 클릭해서 바로 이동해 보세요!</p>
+  </header>
+
+  <!-- 앱 카드가 들어갈 그리드 컨테이너 (반응형) -->
+  <main id="app-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 w-full max-w-5xl">
+    <!-- 자바스크립트를 통해 이곳에 카드가 생성됩니다. -->
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer class="mt-16 text-gray-400 text-sm">
+    © 우리 반 최고! 재미있는 수업 시간 💛
+  </footer>
+
+  <!-- 스크립트 영역 -->
+  <script>
+    // =========================================================================
+    // 💡 [선생님 설정 영역] 여기에 새로운 앱을 추가하거나 수정하세요!
+    // =========================================================================
+    const classApps = [
+      { name: '패들렛', url: 'https://padlet.com', icon: '📝', bgColor: '#FFD1DC' },
+      { name: '띵커벨', url: 'https://www.tkbell.co.kr', icon: '🔔', bgColor: '#FFFACD' },
+      { name: '캔바', url: 'https://www.canva.com', icon: '🎨', bgColor: '#E0FFFF' },
+      { name: '구글 클래스룸', url: 'https://classroom.google.com', icon: '🏫', bgColor: '#E8F5E9' },
+      { name: '클래스팅', url: 'https://www.classting.com', icon: '📱', bgColor: '#F3E5F5' },
+      { name: '미리캔버스', url: 'https://www.miricanvas.com', icon: '🖼️', bgColor: '#E3F2FD' },
+      { name: '엔트리', url: 'https://playentry.org', icon: '🤖', bgColor: '#FFF0F5' },
+      { name: '디지털 교과서', url: 'https://dtbook.edunet.net', icon: '📚', bgColor: '#FFF8E1' }
+      // 새로운 앱을 추가하려면 위 줄의 끝에 쉼표(,)를 넣고 아래 형식을 복사해서 적어주세요.
+      // { name: '이름', url: '주소', icon: '이모지', bgColor: '배경색(HEX 또는 영문)' }
+    ];
+    // =========================================================================
+
+    // 카드 생성 로직
+    const container = document.getElementById('app-container');
+
+    classApps.forEach(app => {
+      // 1. 카드를 감싸는 <a> 태그 생성
+      const card = document.createElement('a');
+      card.href = app.url;
+      card.target = "_blank"; // 새 탭에서 열기
+      card.rel = "noopener noreferrer"; // 보안을 위한 설정
+      // 카드 디자인 클래스 (Tailwind)
+      card.className = "app-card flex flex-col items-center justify-center p-8 rounded-3xl cursor-pointer text-gray-700 decoration-none relative overflow-hidden";
+      card.style.backgroundColor = app.bgColor;
+
+      // 2. 이모지 아이콘 생성
+      const icon = document.createElement('div');
+      icon.className = "text-5xl md:text-6xl mb-4 drop-shadow-sm";
+      icon.textContent = app.icon;
+
+      // 3. 앱 이름 생성
+      const name = document.createElement('div');
+      name.className = "text-xl md:text-2xl font-bold tracking-wide";
+      name.textContent = app.name;
+
+      // 4. 빛나는 반사 효과 (디테일)
+      const shine = document.createElement('div');
+      shine.className = "absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-20 transition-opacity duration-300 pointer-events-none rounded-3xl";
+
+      // 요소 조립 및 화면에 추가
+      card.appendChild(shine);
+      card.appendChild(icon);
+      card.appendChild(name);
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
